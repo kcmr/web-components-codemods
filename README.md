@@ -20,21 +20,25 @@ npx degit kcmr/web-components-codemods
 Run `jscodeshift` passing the transform script with the `-t` option:
 
 ```bash
-jscodeshift target-dir/*.js -t web-components-codemods/<transform-script>.js -p
+jscodeshift target-dir/*.js -t web-components-codemods/<transform-script>.js
 ```
 
 ## Available codemods
 
 ### Replace attrs
 
-Replaces attributes in the specified tag inside a template literal tagged `html` (AKA LitElement).
+Replaces attributes in the specified tag inside a template literal tagged `html` (LitElement or lit-html).
 
 **Script**: `transforms/replace-attrs.js`
 
-**Options**:
+**Options**
 
-- `--tag` (string) Tag name where the attributes will be replaced
-- `--attrs` (object) Object with `{'old-attr': 'new-attr'}` pairs
+| Name         | Default | Type      | Description                                    |
+| ------------ | ------- | --------- | ---------------------------------------------- |
+| `--tag`      | `null`  | `String`  | Tag name where the attributes will be replaced |
+| `--attrs`    | `null`  | `Object`  | Object with {'old-attr': 'new-attr'} pairs     |
+| `--tabWidth` | `4`     | `Number`  | Number of spaces used per tab                  |
+| `--useTabs`  | `false` | `Boolean` | Use tabs instead of spaces                     |
 
 Example input:
 
