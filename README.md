@@ -1,4 +1,4 @@
-# Web Component Codemods
+# Web Components Codemods
 
 Codemods for Web Components.  
 Breaking changes? Don't panic :)
