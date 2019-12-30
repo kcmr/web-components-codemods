@@ -12,8 +12,7 @@ function replaceAttrs(source, tag, attrs) {
 
 export default function transform(file, api, options) {
   const j = api.jscodeshift;
-  const { tag } = options;
-  const { attrs } = options;
+  const { tag, attrs, tabWidth = 4, useTabs = false } = options;
 
   return j(file.source)
     .find(j.TaggedTemplateExpression, {
@@ -24,5 +23,8 @@ export default function transform(file, api, options) {
       const result = replaceAttrs(source, tag, attrs);
       j(path).replaceWith(result);
     })
-    .toSource();
+    .toSource({
+      tabWidth,
+      useTabs,
+    });
 }
