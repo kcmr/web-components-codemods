@@ -36,7 +36,7 @@ Replaces attributes in the specified tag inside a template literal tagged `html`
 | Name         | Default | Type      | Description                                    |
 | ------------ | ------- | --------- | ---------------------------------------------- |
 | `--tag`      | `null`  | `String`  | Tag name where the attributes will be replaced |
-| `--attrs`    | `null`  | `Object`  | Object with {'old-attr': 'new-attr'} pairs     |
+| `--attrs`    | `null`  | `Object`  | Object with `{'old-attr': 'new-attr'}` pairs   |
 | `--tabWidth` | `4`     | `Number`  | Number of spaces used per tab                  |
 | `--useTabs`  | `false` | `Boolean` | Use tabs instead of spaces                     |
 
