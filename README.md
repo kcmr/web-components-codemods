@@ -33,12 +33,12 @@ Replaces attributes in the specified tag inside a template literal tagged `html`
 
 **Options**
 
-| Name         | Default | Type      | Description                                    |
-| ------------ | ------- | --------- | ---------------------------------------------- |
-| `--tag`      | `null`  | `String`  | Tag name where the attributes will be replaced |
-| `--attrs`    | `null`  | `Object`  | Object with `{'old-attr': 'new-attr'}` pairs   |
-| `--tabWidth` | `4`     | `Number`  | Number of spaces used per tab                  |
-| `--useTabs`  | `false` | `Boolean` | Use tabs instead of spaces                     |
+| Name         | Default     | Type      | Description                                              |
+| ------------ | ----------- | --------- | -------------------------------------------------------- |
+| `--tag`      | `undefined` | `String`  | Tag name where the attributes will be replaced           |
+| `--attrs`    | `undefined` | `String`  | Stringified object with `{'old-attr': 'new-attr'}` pairs |
+| `--tabWidth` | `4`         | `Number`  | Number of spaces used per tab                            |
+| `--useTabs`  | `false`     | `Boolean` | Use tabs instead of spaces                               |
 
 Example input:
 
