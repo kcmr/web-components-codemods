@@ -49,7 +49,7 @@ class MyComponent extends LitElement {
       <some-component
         attr-one="value"
         attr-two="${expression}"
-        .propBinding="${expression}"
+        .someProp="${expression}"
       >
       </some-component>
     `;
@@ -60,19 +60,21 @@ class MyComponent extends LitElement {
 Command with options:
 
 ```bash
-jscodeshift input.js -t replace-attrs.js -p --tag=some-component --attrs='{"attr-one": "foo", ".propBinding": ".newPropBinding"}'
+jscodeshift input.js -t replace-attrs.js -p --tag=some-component --attrs='{"attr-one": "foo", ".someProp": ".newProp"}'
 ```
 
 Output:
 
-```js
+```diff
 class MyComponent extends LitElement {
   render() {
     return html`
       <some-component
-        foo="value"
+-        attr-one="value"
++        foo="value"
         attr-two="${expression}"
-        .newPropBinding="${expression}"
+-        .someProp="${expression}"
++        .newProp="${expression}"
       >
       </some-component>
     `;
