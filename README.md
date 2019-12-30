@@ -14,7 +14,7 @@ npm i -g jscodeshift
 Clone or download this repository:
 
 ```bash
-npx degit kcmr/web-component-codemods
+npx degit kcmr/web-components-codemods
 ```
 
 Run `jscodeshift` passing the transform script with the `-t` option:
