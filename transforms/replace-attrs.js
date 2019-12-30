@@ -21,6 +21,11 @@ export default function transform(file, api, options) {
     .forEach((path) => {
       const source = j(path.node).toSource();
       const result = replaceAttrs(source, tag, attrs);
+
+      if (source === result) {
+        return path;
+      }
+
       j(path).replaceWith(result);
     })
     .toSource({
