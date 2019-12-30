@@ -1,3 +1,5 @@
+import { htmlTaggedTemplateLiteral } from './filters';
+
 function replaceAttrs(source, tag, attrs) {
   const tagWithAttrs = new RegExp(`<${tag}([^>]*)>`, 'g');
 
@@ -17,9 +19,7 @@ export default function transform(file, api, options) {
   const { tag, attrs, tabWidth = 4, useTabs = false } = options;
 
   return j(file.source)
-    .find(j.TaggedTemplateExpression, {
-      tag: { name: 'html' },
-    })
+    .find(j.TaggedTemplateExpression, htmlTaggedTemplateLiteral)
     .forEach((path) => {
       const source = j(path.node).toSource();
       const result = replaceAttrs(source, tag, attrs);
@@ -30,8 +30,5 @@ export default function transform(file, api, options) {
 
       j(path).replaceWith(result);
     })
-    .toSource({
-      tabWidth,
-      useTabs,
-    });
+    .toSource({ tabWidth, useTabs });
 }
