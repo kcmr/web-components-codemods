@@ -27,7 +27,7 @@ jscodeshift target-dir/*.js -t web-components-codemods/<transform-script>.js -p
 
 ### Replace attrs
 
-Replaces attributes in the specified tag inside a tagged template literal.
+Replaces attributes in the specified tag inside a template literal tagged `html` (AKA LitElement).
 
 **Script**: `transforms/replace-attrs.js`
 
