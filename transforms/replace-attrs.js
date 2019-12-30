@@ -3,7 +3,9 @@ function replaceAttrs(source, tag, attrs) {
 
   return source.replace(tagWithAttrs, (m) => {
     for (const [from, to] of Object.entries(attrs)) {
-      m = m.replace(new RegExp(from, 'g'), to);
+      m = m.replace(new RegExp(`${from}(\s*=)`, 'g'), (f) =>
+        f.replace(from, to)
+      );
     }
 
     return m;
