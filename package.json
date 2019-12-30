@@ -1,13 +1,17 @@
 {
   "name": "web-components-codemods",
   "version": "1.0.0",
-  "description": "Codemods for Web Components.   Breaking changes? Don't panic :)",
+  "description": "Codemods for Web Components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"*.{js,md}\""
   },
-  "keywords": [],
+  "keywords": [
+    "codemods",
+    "web-components",
+    "jscodeshift"
+  ],
   "author": "Kus Cámara <kus.camara@gmail.com>",
   "license": "MIT",
   "devDependencies": {
