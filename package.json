@@ -1,16 +1,25 @@
 {
   "name": "web-components-codemods",
   "version": "1.0.0",
-  "description": "",
+  "description": "Codemods for Web Components.   Breaking changes? Don't panic :)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"*.{js,md}\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Kus Cámara <kus.camara@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "prettier": "^1.19.1"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcmr/web-components-codemods.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kcmr/web-components-codemods/issues"
+  },
+  "homepage": "https://github.com/kcmr/web-components-codemods#readme"
 }
