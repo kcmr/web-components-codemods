@@ -3,7 +3,7 @@
 Codemods for Web Components.  
 Breaking changes? Don't panic :)
 
-**Table of contents**
+## Table of contents
 
 - [Usage](#usage)
 - [Available codemods](#available-codemods)
