@@ -60,7 +60,7 @@ class MyComponent extends LitElement {
 Command with options:
 
 ```bash
-jscodeshift input.js -t replace-attrs.js -p --tag=some-component --attrs='{"attr-one": "foo", ".someProp": ".newProp"}'
+jscodeshift input.js -t replace-attrs.js --tag=some-component --attrs='{"attr-one": "foo", ".someProp": ".newProp"}'
 ```
 
 Output:
@@ -80,4 +80,36 @@ class MyComponent extends LitElement {
     `;
   }
 }
+```
+
+### Replace block scope by IIFE
+
+Replaces brackets used as scope in a file by an IIFE.
+
+**Script**: `transforms/block-scope-to-iife.js`
+
+**Options**: no options.
+
+Example input:
+
+```js
+{
+  const { Element } = Polymer;
+}
+```
+
+Command with options:
+
+```bash
+jscodeshift input.js -t block-scope-to-iife.js
+```
+
+Output:
+
+```diff
+-{
++(function() {
+  const { Element } = Polymer;
++})();
+-}
 ```
