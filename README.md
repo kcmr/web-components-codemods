@@ -3,6 +3,13 @@
 Codemods for Web Components.  
 Breaking changes? Don't panic :)
 
+**Table of contents**
+
+- [Usage](#usage)
+- [Available codemods](#available-codemods)
+  - [Replace attrs](#replace-attrs)
+  - [Replace block scope by IIFE](#replace-block-scope-by-iife)
+
 ## Usage
 
 Install [jscodeshift](https://github.com/facebook/jscodeshift) globally:
