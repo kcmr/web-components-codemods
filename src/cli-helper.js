@@ -35,6 +35,7 @@ class CliHelper {
       .alias('help', 'h')
       .version()
       .alias('version', 'v')
+      .wrap(null)
       .parse();
   }
 
