@@ -22,7 +22,7 @@ The available codemods can be run in two ways: by using the included CLI or runn
 Install this package globally:
 
 ```bash
-npm i -g web-components-codemods
+npm i -g kcmr/web-components-codemods
 ```
 
 Run the command in the directory you want to run a transform (the directory can be changed later):
