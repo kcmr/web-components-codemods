@@ -37,6 +37,7 @@
   "dependencies": {
     "dargs": "^7.0.0",
     "execa": "^4.0.0",
+    "globby": "^10.0.1",
     "inquirer": "^7.0.1",
     "inquirer-path": "^1.0.0-beta5",
     "jscodeshift": "^0.7.0",
