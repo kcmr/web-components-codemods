@@ -32,7 +32,7 @@ kodemod
 ```
 
 The command will prompt you for the transform to run and all of its options.
-![kodemod CLI screenshot](docs/images/kodemod-cli-screenshot.png)
+![kodemod CLI screenshot](https://raw.githubusercontent.com/kcmr/web-components-codemods/master/docs/images/kodemod-cli-screenshot.png)
 
 Alternatively, you can run a specific transform by running `kodemod <transform>`.
 
