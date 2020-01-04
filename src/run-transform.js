@@ -40,11 +40,9 @@ module.exports = function runTransform({ command, program, options }) {
     args.push('--useTabs=true');
   }
 
-  const result = execa.sync(jscodeshift, args, {
-    stdio: 'inherit',
-  });
-
-  if (result.error) {
-    throw result.error;
+  try {
+    execa.sync(jscodeshift, args, { stdio: 'inherit' });
+  } catch (error) {
+    throw error;
   }
 };
