@@ -32,7 +32,7 @@ kodemod
 ```
 
 The command will prompt you for the transform to run and all of its options.
-![kodemod CLI screenshot](docs/images/kodemod-cli-screenshot.svg)
+![kodemod CLI screenshot](docs/images/kodemod-cli-screenshot.png)
 
 Alternatively, you can run a specific transform by running `kodemod <transform>`.
 
@@ -45,7 +45,7 @@ kodemod replace-attrs
 Available transform commands (same as transform scripts):
 
 - [replace-attrs](#replace-attrs)
-- [block-scope-to-iife](#block-scope-to-iife)
+- [block-scope-to-iife](#replace-block-scope-by-iife)
 
 ### Using jscodeshift
 
