@@ -2,7 +2,7 @@
   "name": "web-components-codemods",
   "version": "1.0.0",
   "description": "Codemods for Web Components",
-  "main": "lib/cli.js",
+  "main": "lib/index.js",
   "keywords": [
     "codemods",
     "web-components",
@@ -35,7 +35,10 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
+    "dargs": "^7.0.0",
+    "execa": "^4.0.0",
     "inquirer": "^7.0.1",
+    "inquirer-path": "^1.0.0-beta5",
     "jscodeshift": "^0.7.0",
     "yargs": "^15.1.0"
   },
