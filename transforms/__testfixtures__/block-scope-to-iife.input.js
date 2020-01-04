@@ -23,3 +23,7 @@ class Component extends Element {
     return 'tag-name';
   }
 }
+
+if (true) {
+  // code
+}

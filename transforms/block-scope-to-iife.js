@@ -1,6 +1,7 @@
 export default function transform(file, api) {
   const j = api.jscodeshift;
-  const inGlobalScope = (path) => path.scope.isGlobal;
+  const isProgramChild = (path) =>
+    path.parentPath.parentPath.name === 'program';
   const iife = (path) =>
     j.expressionStatement(
       j.callExpression(
@@ -11,7 +12,7 @@ export default function transform(file, api) {
 
   return j(file.source)
     .find(j.BlockStatement)
-    .filter(inGlobalScope)
+    .filter(isProgramChild)
     .replaceWith(iife)
     .toSource();
 }
