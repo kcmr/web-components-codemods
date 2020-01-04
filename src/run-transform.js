@@ -23,7 +23,8 @@ module.exports = function runTransform({ command, program, options }) {
   const args = [
     ...files,
     `--transform=${transformScript}`,
-    '--ignore-pattern=**/node_modules/**,**/bower_components/**',
+    '--ignore-pattern=**/node_modules/**',
+    '--ignore-pattern=**/bower_components/**',
     ...dargs(options, {
       excludes,
       allowCamelCase: true,
