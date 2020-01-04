@@ -4,6 +4,7 @@ const path = require('path');
 const execa = require('execa');
 const dargs = require('dargs');
 const globby = require('globby');
+const jscodeshift = require.resolve('.bin/jscodeshift');
 
 // Shamelessly stolen from https://github.com/reactjs/react-codemod/blob/master/bin/cli.js
 function expandFilePathsIfNeeded(files) {
@@ -17,13 +18,16 @@ module.exports = function runTransform({ command, program, options }) {
     '../transforms/',
     `${command}.js`
   );
-  const excludes = ['files'];
+  const excludes = ['files', 'useTabs'];
   const files = expandFilePathsIfNeeded([options.files]);
   const args = [
     ...files,
     `--transform=${transformScript}`,
     '--ignore-pattern=**/node_modules/**,**/bower_components/**',
-    ...dargs(options, { excludes }),
+    ...dargs(options, {
+      excludes,
+      allowCamelCase: true,
+    }),
   ];
 
   // always preview in dry-run mode
@@ -31,7 +35,11 @@ module.exports = function runTransform({ command, program, options }) {
     args.push('--print');
   }
 
-  const result = execa.sync('jscodeshift', args, {
+  if (options.useTabs) {
+    args.push('--useTabs=true');
+  }
+
+  const result = execa.sync(jscodeshift, args, {
     stdio: 'inherit',
   });
 

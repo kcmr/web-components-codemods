@@ -35,6 +35,17 @@ module.exports = {
         message: 'Object with {"old-attr": "new-attr"} pairs to replace',
         type: 'input',
       },
+      useTabs: {
+        message: 'Use tabs instead of spaces',
+        type: 'confirm',
+        default: false,
+      },
+      tabWidth: {
+        message: 'Number of spaces used per tab',
+        type: 'number',
+        default: 4,
+        when: (input) => input.useTabs,
+      },
     },
     action: runTransform,
   },
