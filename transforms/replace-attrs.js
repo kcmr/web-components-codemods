@@ -1,5 +1,3 @@
-import { htmlTaggedTemplateLiteral } from './filters';
-
 class AttrReplacer {
   constructor(parser, tag, attrs) {
     this.parser = parser;
@@ -39,7 +37,7 @@ export default function transform(file, api, options) {
   const { hasTag, tagWithNewAttrs } = tagAttrReplacer;
 
   return j(file.source)
-    .find(j.TaggedTemplateExpression, htmlTaggedTemplateLiteral)
+    .find(j.TaggedTemplateExpression, { tag: { name: 'html' } })
     .filter(hasTag)
     .replaceWith(tagWithNewAttrs)
     .toSource({ tabWidth, useTabs });
