@@ -15,3 +15,9 @@ install:
 script:
   - npm t
   - codecov
+
+deploy:
+  - provider: script
+    cleanup: true
+    script:
+      - npx semantic-release
