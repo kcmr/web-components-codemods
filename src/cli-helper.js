@@ -9,7 +9,43 @@ const TYPES_MAP = {
   number: 'number',
 };
 
+/**
+ * Creates CLIs from the specified commands object.
+ * Uses yargs and inquirer to prompt for missing command params not passed as flags / options.
+ * The commands object accepts an `action` key (`function`) for each command that will
+ * receive the executed command, the program (the name of the executable binary) and the command options as `options` object.
+ * Command params use the same options that inquirer questions.
+ *
+ * @example
+ * ```js
+ * const { CliHelper } = require('./cli-helper');
+ * const cli = new CliHelper({
+ *   description: 'My awesome CLI',
+ *   commands: {
+ *     'print': {
+ *       desc: 'Prints something',
+ *       params: {
+ *         color: {
+ *           message: 'Use colors in output',
+ *           type: 'boolean'
+ *         }
+ *       },
+ *       action: ({ command, program, options }) => {
+ *         console.log(`${command} executed with ${options.color}`);
+ *       }
+ *     }
+ *   }
+ * });
+ * cli.run();
+ * ```
+ */
 class CliHelper {
+  /**
+   * CliHelper constructor
+   * @param  {String} options.description           Main command description
+   * @param  {String} options.defaultCommandMessage Message used in the prompt of the default command
+   * @param  {Object} options.commands              CLI commands
+   */
   constructor({
     description,
     defaultCommandMessage = 'Choose a command',
@@ -20,10 +56,18 @@ class CliHelper {
     this.commands = commands;
   }
 
+  /**
+   * Register an inquirer prompt type
+   * @param  {String} name    prompt type
+   * @param  {Object} handler prompt type handler
+   */
   registerPrompt(name, handler) {
     inquirer.registerPrompt(name, handler);
   }
 
+  /**
+   * Runs the command
+   */
   run() {
     for (const command of Object.keys(this.commands)) {
       yargs.command(this.buildCommand(command));
@@ -43,12 +87,6 @@ class CliHelper {
     return Object.entries(this.commands[command].params);
   }
 
-  /**
-   * Builds the default yargs command (*) that prompts for the command to run (used if no command is passed).
-   * @param  {String} desc    Command description
-   * @param  {String} message Question message
-   * @return {Object}         Yargs command
-   */
   buildDefaultCommand() {
     return {
       command: '*',
@@ -66,12 +104,6 @@ class CliHelper {
     };
   }
 
-  /**
-   * Builds a yargs command.
-   * The handler prompts for missing params not passed as flags / options.
-   * @param  {String} name Command name
-   * @return {Object}      yargs command
-   */
   buildCommand(name) {
     return {
       command: name,
@@ -100,12 +132,6 @@ class CliHelper {
     );
   }
 
-  /**
-   * Returns the equivalent type from an inquirer prompt and a yargs option
-   * Returns 'string' for unknown types
-   * @param  {String} type
-   * @return {String} yargs option type
-   */
   getOptionType(type) {
     return TYPES_MAP[type] || 'string';
   }
