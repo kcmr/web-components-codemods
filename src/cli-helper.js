@@ -2,6 +2,13 @@ const yargs = require('yargs');
 const inquirer = require('inquirer');
 const { prompt } = inquirer;
 
+// Map of prompt types and yargs option types
+const TYPES_MAP = {
+  input: 'string',
+  confirm: 'boolean',
+  number: 'number',
+};
+
 class CliHelper {
   constructor({
     description,
@@ -83,10 +90,23 @@ class CliHelper {
     return this.getParams(command).reduce(
       (obj, [option, config]) =>
         Object.assign(obj, {
-          [option]: { describe: config.message },
+          [option]: {
+            describe: config.message,
+            type: this.getOptionType(config.type),
+          },
         }),
       {}
     );
+  }
+
+  /**
+   * Returns the equivalent type from an inquirer prompt and a yargs option
+   * Returns 'string' for unknown types
+   * @param  {String} type
+   * @return {String} yargs option type
+   */
+  getOptionType(type) {
+    return TYPES_MAP[type] || 'string';
   }
 
   async requestMissingParams(command, params) {
