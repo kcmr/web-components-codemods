@@ -6,11 +6,48 @@ Breaking changes? Don't panic :)
 ## Table of contents
 
 - [Usage](#usage)
+  - [Using the included CLI](#using-the-included-cli)
+  - [Using jscodeshift](#using-jscodeshift)
 - [Available codemods](#available-codemods)
   - [Replace attrs](#replace-attrs)
   - [Replace block scope by IIFE](#replace-block-scope-by-iife)
+- [Acknowledgments](#acknowledgments)
 
 ## Usage
+
+The available codemods can be run in two ways: by using the included CLI or running the transform scripts directly with jscodeshift.
+
+### Using the included CLI
+
+Install this package globally:
+
+```bash
+npm i -g web-components-codemods
+```
+
+Run the command in the directory you want to run a transform (the directory can be changed later):
+
+```bash
+kodemod
+```
+
+The command will prompt you for the transform to run and all of its options.
+![kodemod CLI screenshot](docs/images/kodemod-cli-screenshot.svg)
+
+Alternatively, you can run a specific transform by running `kodemod <transform>`.
+
+Example:
+
+```bash
+kodemod replace-attrs
+```
+
+Available transform commands (same as transform scripts):
+
+- [replace-attrs](#replace-attrs)
+- [block-scope-to-iife](#block-scope-to-iife)
+
+### Using jscodeshift
 
 Install [jscodeshift](https://github.com/facebook/jscodeshift) globally:
 
@@ -120,3 +157,15 @@ Output:
 +})();
 -}
 ```
+
+## Acknowledgments
+
+**Inspiration**
+
+- [Fearless refactors con AST - Speaker Deck](https://speakerdeck.com/sanguino/fearless-refactors-con-ast)
+- [React Codemod](https://github.com/reactjs/react-codemod)
+
+**Resources**
+
+- [Write Code to Rewrite Your Code: jscodeshift](https://www.toptal.com/javascript/write-code-to-rewrite-your-code)
+- [jscodeshift API and demos](https://hackmd.io/@yQp_d2iwRF25H5YTCeWj0w/Hy8FL6IWZ?type=view#jscodeshift-draft)
