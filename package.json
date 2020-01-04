@@ -2,7 +2,7 @@
   "name": "web-components-codemods",
   "version": "1.0.0",
   "description": "Codemods for Web Components",
-  "main": "index.js",
+  "main": "src/index.js",
   "keywords": [
     "codemods",
     "web-components",
@@ -22,6 +22,9 @@
     "test": "jest",
     "format": "prettier --write \"*.{js,md}\""
   },
+  "bin": {
+    "kodemod": "./bin/kodemod"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
@@ -32,7 +35,13 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "jscodeshift": "^0.7.0"
+    "dargs": "^7.0.0",
+    "execa": "^4.0.0",
+    "globby": "^10.0.1",
+    "inquirer": "^7.0.1",
+    "inquirer-path": "^1.0.0-beta5",
+    "jscodeshift": "^0.7.0",
+    "yargs": "^15.1.0"
   },
   "jest": {
     "globals": {
