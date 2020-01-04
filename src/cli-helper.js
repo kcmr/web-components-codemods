@@ -25,6 +25,9 @@ class CliHelper {
     yargs
       .command(this.buildDefaultCommand())
       .help()
+      .alias('help', 'h')
+      .version()
+      .alias('version', 'v')
       .parse();
   }
 
