@@ -20,4 +20,4 @@ deploy:
   - provider: script
     cleanup: true
     script:
-      - npx semantic-release
+      - npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
