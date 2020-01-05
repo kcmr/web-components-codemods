@@ -169,3 +169,7 @@ Output:
 
 - [Write Code to Rewrite Your Code: jscodeshift](https://www.toptal.com/javascript/write-code-to-rewrite-your-code)
 - [jscodeshift API and demos](https://hackmd.io/@yQp_d2iwRF25H5YTCeWj0w/Hy8FL6IWZ?type=view#jscodeshift-draft)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

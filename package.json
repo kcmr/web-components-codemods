@@ -6,7 +6,8 @@
   "keywords": [
     "codemods",
     "web-components",
-    "jscodeshift"
+    "jscodeshift",
+    "cli"
   ],
   "author": "Kus Cámara <kus.camara@gmail.com>",
   "license": "MIT",
@@ -20,20 +21,17 @@
   "homepage": "https://github.com/kcmr/web-components-codemods#readme",
   "scripts": {
     "test": "jest",
-    "format": "prettier --write \"*.{js,md}\""
+    "format": "prettier --write \"*.{js,md}\"",
+    "commit": "git-cz"
   },
   "bin": {
     "kodemod": "./bin/kodemod"
   },
-  "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "babel-jest": "^24.9.0",
-    "fbjs-scripts": "^1.2.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.19.1"
-  },
+  "files": [
+    "bin/",
+    "src/",
+    "transforms/"
+  ],
   "dependencies": {
     "dargs": "^7.0.0",
     "execa": "^4.0.0",
@@ -42,6 +40,61 @@
     "inquirer-path": "^1.0.0-beta5",
     "jscodeshift": "^0.7.0",
     "yargs": "^15.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@commitlint/cli": "^8.3.4",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@semantic-release/changelog": "^3.0.6",
+    "@semantic-release/commit-analyzer": "^6.3.3",
+    "@semantic-release/git": "^7.0.18",
+    "@semantic-release/npm": "^5.3.5",
+    "@semantic-release/release-notes-generator": "^7.3.5",
+    "babel-jest": "^24.9.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "fbjs-scripts": "^1.2.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "semantic-release": "^15.14.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm t",
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md}": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ],
+    "branch": "master",
+    "tagFormat": "${version}"
   },
   "jest": {
     "globals": {
