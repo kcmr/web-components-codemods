@@ -21,7 +21,8 @@ class AttrReplacer {
   replaceAttrs(source) {
     return source.replace(this.tagWithAttrs, (m) => {
       for (const [from, to] of Object.entries(this.attrs)) {
-        const attribute = new RegExp(`${from}(\s*=)`, 'g');
+        const attribute = new RegExp(`${from}( *=)`, 'g');
+        // eslint-disable-next-line no-param-reassign
         m = m.replace(attribute, (f) => f.replace(from, to));
       }
 

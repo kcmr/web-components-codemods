@@ -1,12 +1,10 @@
-'use strict';
-
 const runTransform = require('./run-transform');
 
 const commonParams = {
   files: {
     message: 'Files where the command will be executed',
     type: 'path',
-    validate: (input) => true,
+    validate: () => true,
   },
   dry: {
     message: "Run in preview mode (don't transform files)",

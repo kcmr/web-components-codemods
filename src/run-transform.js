@@ -1,9 +1,9 @@
-'use strict';
-
 const path = require('path');
 const execa = require('execa');
 const dargs = require('dargs');
 const globby = require('globby');
+
+// eslint-disable-next-line node/no-unpublished-require
 const jscodeshift = require.resolve('.bin/jscodeshift');
 
 // Shamelessly stolen from https://github.com/reactjs/react-codemod/blob/master/bin/cli.js
@@ -12,7 +12,7 @@ function expandFilePathsIfNeeded(files) {
   return shouldExpandFiles ? globby.sync(files) : files;
 }
 
-module.exports = function runTransform({ command, program, options }) {
+module.exports = function runTransform({ command, options }) {
   const transformScript = path.join(
     __dirname,
     '../transforms/',
@@ -40,9 +40,9 @@ module.exports = function runTransform({ command, program, options }) {
     args.push('--useTabs=true');
   }
 
-  try {
-    execa.sync(jscodeshift, args, { stdio: 'inherit' });
-  } catch (error) {
-    throw error;
+  const result = execa.sync(jscodeshift, args, { stdio: 'inherit' });
+
+  if (result.error) {
+    throw result.error;
   }
 };

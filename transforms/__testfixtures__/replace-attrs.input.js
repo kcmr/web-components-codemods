@@ -13,7 +13,7 @@ class Component extends HTMLElement {
       <wc-icon
         icon="icon:foo"
         some-attr="value"
-        .someProp="${expression}"
+        .someProp = "${expression}"
       ></wc-icon>
     `;
   }
