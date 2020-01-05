@@ -1,6 +1,5 @@
 language: node_js
 node_js: stable
-sudo: false
 dist: trusty
 
 cache: npm
@@ -16,9 +15,3 @@ install:
 script:
   - npm t
   - codecov
-
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script:
-      - npx semantic-release
