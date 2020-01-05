@@ -21,4 +21,4 @@ deploy:
   - provider: script
     cleanup: true
     script:
-      - npx semantic-release
+      - npm run semantic-release
