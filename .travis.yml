@@ -8,7 +8,7 @@ before_install:
   - npm install -g npm@6
   - npm install
   - npm install -g codecov
-  - npm install -g @semantic-release
+  - npm install -g semantic-release
 
 install:
   - npm ci
