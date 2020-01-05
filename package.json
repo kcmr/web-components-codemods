@@ -1,6 +1,6 @@
 {
   "name": "web-components-codemods",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Codemods for Web Components",
   "main": "src/index.js",
   "keywords": [
@@ -22,6 +22,7 @@
   "scripts": {
     "test": "jest",
     "format": "prettier --write \"*.{js,md}\"",
+    "semantic-release": "semantic-release",
     "commit": "git-cz"
   },
   "bin": {
