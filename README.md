@@ -1,5 +1,13 @@
 # Web Components Codemods
 
+[![Build Status](https://travis-ci.com/kcmr/web-components-codemods.svg?branch=master)](https://travis-ci.com/kcmr/web-components-codemods)
+
+<!-- [![npm version](https://badge.fury.io/js/web-components-codemods.svg)](https://badge.fury.io/js/web-components-codemods) -->
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![codecov](https://codecov.io/gh/kcmr/web-components-codemods/branch/master/graph/badge.svg)](https://codecov.io/gh/kcmr/web-components-codemods)
+![Dependency status](https://img.shields.io/david/kcmr/web-components-codemods.svg)
+
 Codemods for Web Components.  
 Breaking changes? Don't panic :)
 
