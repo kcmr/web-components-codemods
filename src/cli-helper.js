@@ -1,19 +1,13 @@
 const yargs = require('yargs');
 const inquirer = require('inquirer');
-const { prompt } = inquirer;
 
-// Map of prompt types and yargs option types
-const TYPES_MAP = {
-  input: 'string',
-  confirm: 'boolean',
-  number: 'number',
-};
+const { prompt } = inquirer;
 
 /**
  * Creates CLIs from the specified commands object.
  * Uses yargs and inquirer to prompt for missing command params not passed as flags / options.
  * The commands object accepts an `action` key (`function`) for each command that will
- * receive the executed command, the program (the name of the executable binary) and the command options as `options` object.
+ * receive the executed command and the command options as `options` object.
  * Command params use the same options that inquirer questions.
  *
  * @example
@@ -30,7 +24,7 @@ const TYPES_MAP = {
  *           type: 'boolean'
  *         }
  *       },
- *       action: ({ command, program, options }) => {
+ *       action: ({ command, options }) => {
  *         console.log(`${command} executed with ${options.color}`);
  *       }
  *     }
@@ -43,7 +37,8 @@ class CliHelper {
   /**
    * CliHelper constructor
    * @param  {String} options.description           Main command description
-   * @param  {String} options.defaultCommandMessage Message used in the prompt of the default command
+   * @param  {String} options.defaultCommandMessage Prompt message of the
+   * default command
    * @param  {Object} options.commands              CLI commands
    */
   constructor({
@@ -54,6 +49,11 @@ class CliHelper {
     this.description = description;
     this.defaultCommandMessage = defaultCommandMessage;
     this.commands = commands;
+    this.yargsOptionTypeForPromptType = {
+      input: 'string',
+      confirm: 'boolean',
+      number: 'number',
+    };
   }
 
   /**
@@ -61,7 +61,7 @@ class CliHelper {
    * @param  {String} name    prompt type
    * @param  {Object} handler prompt type handler
    */
-  registerPrompt(name, handler) {
+  static registerPrompt(name, handler) {
     inquirer.registerPrompt(name, handler);
   }
 
@@ -108,13 +108,13 @@ class CliHelper {
     return {
       command: name,
       desc: this.commands[name].desc,
-      builder: (yargs) => yargs.options(this.getCommandOptions(name)),
+      builder: () => yargs.options(this.getCommandOptions(name)),
       handler: async (args) => {
         const params = await this.requestMissingParams(name, args);
-        const { _, $0: program, ...options } = params;
+        const { _, $0, ...options } = params;
         const command = name;
 
-        this.commands[name].action({ command, program, options });
+        this.commands[name].action({ command, options });
       },
     };
   }
@@ -133,7 +133,7 @@ class CliHelper {
   }
 
   getOptionType(type) {
-    return TYPES_MAP[type] || 'string';
+    return this.yargsOptionTypeForPromptType[type] || 'string';
   }
 
   async requestMissingParams(command, params) {

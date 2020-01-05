@@ -1,6 +1,5 @@
-'use strict';
+const { defineTest } = require('jscodeshift/dist/testUtils');
 
-const defineTest = require('jscodeshift/dist/testUtils').defineTest;
 defineTest(__dirname, 'replace-attrs', {
   tag: 'wc-icon',
   attrs: {

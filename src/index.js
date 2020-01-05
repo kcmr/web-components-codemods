@@ -1,7 +1,5 @@
-'use strict';
-
-const { CliHelper } = require('./cli-helper');
 const { PathPrompt } = require('inquirer-path');
+const { CliHelper } = require('./cli-helper');
 const commands = require('./commands');
 
 const cli = new CliHelper({
@@ -10,5 +8,5 @@ const cli = new CliHelper({
   commands,
 });
 
-cli.registerPrompt('path', PathPrompt);
+CliHelper.registerPrompt('path', PathPrompt);
 cli.run();

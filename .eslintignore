@@ -1,0 +1,5 @@
+# config files
+.*.js
+
+# test fixtures
+transforms/__testfixtures__/*

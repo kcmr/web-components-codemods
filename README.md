@@ -1,10 +1,9 @@
 # Web Components Codemods
 
 [![Build Status](https://travis-ci.com/kcmr/web-components-codemods.svg?branch=master)](https://travis-ci.com/kcmr/web-components-codemods)
-
-<!-- [![npm version](https://badge.fury.io/js/web-components-codemods.svg)](https://badge.fury.io/js/web-components-codemods) -->
-
+[![npm version](https://img.shields.io/npm/v/web-components-codemods/latest.svg)](https://www.npmjs.com/package/web-components-codemods)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![codecov](https://codecov.io/gh/kcmr/web-components-codemods/branch/master/graph/badge.svg)](https://codecov.io/gh/kcmr/web-components-codemods)
 [![Greenkeeper badge](https://badges.greenkeeper.io/kcmr/web-components-codemods.svg)](https://greenkeeper.io/)
 ![Dependency status](https://img.shields.io/david/kcmr/web-components-codemods.svg)
@@ -31,7 +30,7 @@ The available codemods can be run in two ways: by using the included CLI or runn
 Install this package globally:
 
 ```bash
-npm i -g kcmr/web-components-codemods
+npm i -g web-components-codemods
 ```
 
 Run the command in the directory you want to run a transform (the directory can be changed later):

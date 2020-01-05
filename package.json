@@ -9,7 +9,10 @@
     "jscodeshift",
     "cli"
   ],
-  "author": "Kus Cámara <kus.camara@gmail.com>",
+  "author": {
+    "name": "Kus Cámara",
+    "email": "<kus.camara@gmail.com>"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -21,7 +24,10 @@
   "homepage": "https://github.com/kcmr/web-components-codemods#readme",
   "scripts": {
     "test": "jest",
-    "format": "prettier --write \"*.{js,md}\"",
+    "lint:eslint": "eslint \"bin/**\" \"src/**\" \"transforms/**\"",
+    "format:prettier": "prettier --write \"*.{js,md}\"",
+    "format:eslint": "npm run lint:eslint -- --fix",
+    "format": "npm run format:prettier && npm run format:eslint",
     "semantic-release": "semantic-release",
     "commit": "git-cz"
   },
@@ -31,7 +37,7 @@
   "files": [
     "bin/",
     "src/",
-    "transforms/"
+    "transforms/*.js"
   ],
   "dependencies": {
     "dargs": "^7.0.0",
@@ -50,10 +56,17 @@
     "@commitlint/config-conventional": "^8.1.0",
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
-    "fbjs-scripts": "^1.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.3.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
@@ -103,5 +116,8 @@
       "transforms"
     ],
     "collectCoverage": true
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
