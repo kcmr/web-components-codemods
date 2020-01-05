@@ -46,13 +46,13 @@
     "@babel/core": "^7.7.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
-    "@commitlint/cli": "^8.3.4",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@semantic-release/changelog": "^3.0.6",
-    "@semantic-release/commit-analyzer": "^6.3.3",
-    "@semantic-release/git": "^7.0.18",
-    "@semantic-release/npm": "^5.3.5",
-    "@semantic-release/release-notes-generator": "^7.3.5",
+    "@commitlint/cli": "8.1.0",
+    "@commitlint/config-conventional": "8.1.0",
+    "@semantic-release/changelog": "3.0.4",
+    "@semantic-release/commit-analyzer": "6.2.0",
+    "@semantic-release/git": "7.0.16",
+    "@semantic-release/npm": "5.1.13",
+    "@semantic-release/release-notes-generator": "7.2.1",
     "babel-jest": "^24.9.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
@@ -61,7 +61,7 @@
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "semantic-release": "^15.14.0"
+    "semantic-release": "15.13.18"
   },
   "husky": {
     "hooks": {
