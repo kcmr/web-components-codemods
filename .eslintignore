@@ -3,3 +3,6 @@
 
 # test fixtures
 transforms/__testfixtures__/*
+
+# markdown
+*.md
