@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kcmr/web-components-codemods.git"
+    "url": "https://github.com/kcmr/web-components-codemods.git"
   },
   "bugs": {
     "url": "https://github.com/kcmr/web-components-codemods/issues"
@@ -58,7 +58,7 @@
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "semantic-release": "^15.13.18"
+    "semantic-release": "^15.14.0"
   },
   "husky": {
     "hooks": {

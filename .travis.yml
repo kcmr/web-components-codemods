@@ -8,7 +8,6 @@ before_install:
   - npm install -g npm@6
   - npm install
   - npm install -g codecov
-  - npm install -g semantic-release
 
 install:
   - npm ci
@@ -21,4 +20,4 @@ deploy:
   - provider: script
     cleanup: true
     script:
-      - npm run semantic-release
+      - npx semantic-release
