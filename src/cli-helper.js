@@ -83,7 +83,7 @@ class CliHelper {
       .parse();
   }
 
-  getParams(command) {
+  getCommandParams(command) {
     return Object.entries(this.commands[command].params);
   }
 
@@ -120,7 +120,7 @@ class CliHelper {
   }
 
   getCommandOptions(command) {
-    return this.getParams(command).reduce(
+    return this.getCommandParams(command).reduce(
       (obj, [option, config]) =>
         Object.assign(obj, {
           [option]: {
@@ -137,7 +137,7 @@ class CliHelper {
   }
 
   async requestMissingParams(command, params) {
-    const questions = this.getQuestionSets();
+    const questions = this.getAllCommandsQuestions();
     const notInParams = (entry) => !Object.keys(params).includes(entry.name);
     const missingParams = questions[command].filter(notInParams);
     const answers = await prompt(missingParams).catch(yargs.exit);
@@ -145,7 +145,7 @@ class CliHelper {
     return Object.assign(params, answers);
   }
 
-  getQuestionSets() {
+  getAllCommandsQuestions() {
     return Object.keys(this.commands).reduce(
       (obj, command) =>
         Object.assign(obj, {
@@ -156,7 +156,7 @@ class CliHelper {
   }
 
   getCommandQuestions(command) {
-    return this.getParams(command).reduce(
+    return this.getCommandParams(command).reduce(
       (arr, [option, config]) =>
         arr.concat({
           ...config,
