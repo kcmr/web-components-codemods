@@ -120,16 +120,16 @@ class CliHelper {
   }
 
   getCommandOptions(command) {
-    return this.getCommandParams(command).reduce(
-      (obj, [option, config]) =>
-        Object.assign(obj, {
-          [option]: {
-            describe: config.message,
-            type: this.getOptionType(config.type),
-          },
-        }),
-      {}
-    );
+    const commandOptions = {};
+
+    for (const [option, config] of this.getCommandParams(command)) {
+      commandOptions[option] = {
+        describe: config.message,
+        type: this.getOptionType(config.type),
+      };
+    }
+
+    return commandOptions;
   }
 
   getOptionType(type) {
@@ -146,24 +146,26 @@ class CliHelper {
   }
 
   getAllCommandsQuestions() {
-    return Object.keys(this.commands).reduce(
-      (obj, command) =>
-        Object.assign(obj, {
-          [command]: this.getCommandQuestions(command),
-        }),
-      {}
-    );
+    const allCommandsQuestions = {};
+
+    for (const command of Object.keys(this.commands)) {
+      allCommandsQuestions[command] = this.getCommandQuestions(command);
+    }
+
+    return allCommandsQuestions;
   }
 
   getCommandQuestions(command) {
-    return this.getCommandParams(command).reduce(
-      (arr, [option, config]) =>
-        arr.concat({
-          ...config,
-          name: option,
-        }),
-      []
-    );
+    const commandQuestions = [];
+
+    for (const [option, config] of this.getCommandParams(command)) {
+      commandQuestions.push({
+        ...config,
+        name: option,
+      });
+    }
+
+    return commandQuestions;
   }
 }
 
