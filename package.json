@@ -54,7 +54,7 @@
     "@babel/preset-env": "^7.7.7",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^7.0.16",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
