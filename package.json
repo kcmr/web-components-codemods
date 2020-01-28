@@ -71,7 +71,7 @@
     "jest": "^24.9.0",
     "lint-staged": "^10.0.3",
     "prettier": "^1.19.1",
-    "semantic-release": "^16.0.0"
+    "semantic-release": "^17.0.0"
   },
   "husky": {
     "hooks": {
