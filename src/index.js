@@ -1,5 +1,5 @@
 const { PathPrompt } = require('inquirer-path');
-const { CliHelper } = require('./cli-helper');
+const { CliHelper } = require('@kuscamara/cli-helper');
 const commands = require('./commands');
 
 const cli = new CliHelper({
