@@ -1,6 +1,6 @@
 {
   "name": "web-components-codemods",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Codemods for Web Components",
   "main": "src/index.js",
   "keywords": [

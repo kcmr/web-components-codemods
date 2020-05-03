@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/kcmr/web-components-codemods/compare/1.0.0...1.0.1) (2020-05-03)
+
+
+### Bug Fixes
+
+* **package:** update jscodeshift to version 0.8.0 ([ccb1296](https://github.com/kcmr/web-components-codemods/commit/ccb12969093cc9b36ae0dde2600f40653379494f))
+
 # 1.0.0 (2020-01-05)
 
 
