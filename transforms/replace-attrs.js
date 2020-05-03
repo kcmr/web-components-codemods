@@ -8,9 +8,7 @@ class AttrReplacer {
   }
 
   nodeHasTag(path) {
-    return this.parser(path.node)
-      .toSource()
-      .match(this.tagWithAttrs);
+    return this.parser(path.node).toSource().match(this.tagWithAttrs);
   }
 
   getTagWithNewAttrs(path) {
