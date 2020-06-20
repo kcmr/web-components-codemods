@@ -20,6 +20,7 @@ Breaking changes? Don't panic :)
 - [Available codemods](#available-codemods)
   - [Replace attrs](#replace-attrs)
   - [Replace block scope by IIFE](#replace-block-scope-by-iife)
+  - [Rename tag](#rename-tag)
 - [Acknowledgments](#acknowledgments)
 
 ## Usage
@@ -165,6 +166,52 @@ Output:
   const { Element } = Polymer;
 +})();
 -}
+```
+
+### Rename tag
+
+Renames a tag name inside template literals and strings.
+
+**Script**: `transforms/rename-tag.js`
+
+**Options**
+
+| Name         | Default     | Type      | Description                   |
+| ------------ | ----------- | --------- | ----------------------------- |
+| `--oldTag`   | `undefined` | `String`  | Tag name to replace           |
+| `--newTag`   | `undefined` | `String`  | New tag name                  |
+| `--tabWidth` | `2`         | `Number`  | Number of spaces used per tab |
+| `--useTabs`  | `false`     | `Boolean` | Use tabs instead of spaces    |
+
+Example input:
+
+```js
+const tpl = `
+  <some-tag>
+    <some-tag-two></some-tag-two>
+  </some-tag>
+`;
+customElements.define('some-tag', SomeTag);
+```
+
+Command with options:
+
+```bash
+jscodeshift input.js -t rename-tag.js --oldTag=some-tag --newTag=new-tag
+```
+
+Output:
+
+```diff
+const tpl = `
+-  <some-tag>
++  <new-tag>
+    <some-tag-two></some-tag-two>
+-  </some-tag>
++  </new-tag>
+`;
+-customElements.define('some-tag', SomeTag);
++customElements.define('new-tag', SomeTag);
 ```
 
 ## Acknowledgments
