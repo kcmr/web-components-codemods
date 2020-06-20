@@ -24,13 +24,18 @@ class TagReplacer {
 
 export default function transform(file, api, options) {
   const j = api.jscodeshift;
+  const root = j(file.source);
   const { oldTag, newTag, tabWidth = 2, useTabs = false } = options;
   const tagReplacer = new TagReplacer(j, oldTag, newTag);
   const { hasTag, renamedTag } = tagReplacer;
 
-  return j(file.source)
+  root
     .find(j.TemplateElement)
     .filter(hasTag)
     .replaceWith(renamedTag)
     .toSource({ tabWidth, useTabs });
+
+  root.find(j.Literal, { value: oldTag }).replaceWith(renamedTag);
+
+  return root.toSource({ tabWidth, useTabs });
 }
