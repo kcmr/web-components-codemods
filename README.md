@@ -4,7 +4,6 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![codecov](https://codecov.io/gh/kcmr/web-components-codemods/branch/master/graph/badge.svg)](https://codecov.io/gh/kcmr/web-components-codemods)
-[![Greenkeeper badge](https://badges.greenkeeper.io/kcmr/web-components-codemods.svg)](https://greenkeeper.io/)
 ![Dependency status](https://img.shields.io/david/kcmr/web-components-codemods.svg)
 
 [![NPM](https://nodei.co/npm/web-components-codemods.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/web-components-codemods/)
@@ -56,6 +55,7 @@ Available transform commands (same as transform scripts):
 
 - [replace-attrs](#replace-attrs)
 - [block-scope-to-iife](#replace-block-scope-by-iife)
+- [rename-tag](#rename-tag)
 
 ### Using jscodeshift
 
