@@ -35,7 +35,7 @@ export default function transform(file, api, options) {
     .replaceWith(renamedTag)
     .toSource({ tabWidth, useTabs });
 
-  root.find(j.Literal, { value: oldTag }).replaceWith(renamedTag);
+  root.find(j.Literal).filter(hasTag).replaceWith(renamedTag);
 
   return root.toSource({ tabWidth, useTabs });
 }
