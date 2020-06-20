@@ -62,7 +62,7 @@ module.exports = {
       useTabs: {
         message: 'Use tabs instead of spaces',
         type: 'confirm',
-        defautl: false,
+        default: false,
       },
       tabWidth: {
         message: 'Number of spaces used per tab',
