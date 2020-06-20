@@ -47,4 +47,30 @@ module.exports = {
     },
     action: runTransform,
   },
+  'rename-tag': {
+    desc: 'Renames tag names in strings and template literals',
+    params: {
+      ...commonParams,
+      oldTag: {
+        message: 'Tag to rename (Example: some-tag)',
+        type: 'input',
+      },
+      newTag: {
+        message: 'New tag name (Example: new-tag)',
+        type: 'input',
+      },
+      useTabs: {
+        message: 'Use tabs instead of spaces',
+        type: 'confirm',
+        defautl: false,
+      },
+      tabWidth: {
+        message: 'Number of spaces used per tab',
+        type: 'number',
+        default: 2,
+        when: (input) => input.useTabs,
+      },
+    },
+    action: runTransform,
+  },
 };
