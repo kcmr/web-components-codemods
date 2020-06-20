@@ -1,3 +1,18 @@
+# [1.1.0](https://github.com/kcmr/web-components-codemods/compare/1.0.1...1.1.0) (2020-06-20)
+
+
+### Bug Fixes
+
+* **commands:** typo in rename-tag command ([2b8ac06](https://github.com/kcmr/web-components-codemods/commit/2b8ac062fa631c6230c070c81da19f702e3df1a7))
+* **transforms:** find tag name in any string ([eb1ee27](https://github.com/kcmr/web-components-codemods/commit/eb1ee27fa8d5ad73c94282f62ef26df647b112d9))
+
+
+### Features
+
+* **commands:** add new kodemod ([de74540](https://github.com/kcmr/web-components-codemods/commit/de74540d106c2f2390863bb2a1632b509d00fbb9))
+* **transforms:** add a codemod to rename tags ([5b40bde](https://github.com/kcmr/web-components-codemods/commit/5b40bde86865b01981588b5f0f39f6f1131a89cb))
+* **transforms:** rename tag name strings ([4e1cdf4](https://github.com/kcmr/web-components-codemods/commit/4e1cdf4e00ac86545a5804bf323b3e96d9cdd94e))
+
 ## [1.0.1](https://github.com/kcmr/web-components-codemods/compare/1.0.0...1.0.1) (2020-05-03)
 
 
