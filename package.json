@@ -45,29 +45,29 @@
     "jscodeshift": "^0.10.0"
   },
   "devDependencies": {
-    "@babel/core": "7.10.3",
-    "@babel/plugin-proposal-object-rest-spread": "7.10.3",
-    "@babel/preset-env": "7.10.3",
-    "@commitlint/cli": "8.3.5",
-    "@commitlint/config-conventional": "8.3.4",
-    "@semantic-release/changelog": "5.0.1",
-    "@semantic-release/git": "9.0.0",
-    "babel-eslint": "10.1.0",
-    "babel-jest": "24.9.0",
-    "commitizen": "4.1.2",
-    "cz-conventional-changelog": "3.2.0",
-    "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-config-prettier": "6.9.0",
-    "eslint-plugin-import": "2.19.1",
-    "eslint-plugin-jest": "23.3.0",
-    "eslint-plugin-node": "11.0.0",
-    "eslint-plugin-prettier": "3.1.2",
-    "husky": "4.0.4",
-    "jest": "24.9.0",
-    "lint-staged": "10.0.3",
-    "prettier": "2.0.5",
-    "semantic-release": "17.0.0"
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^24.9.0",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.3.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.0.4",
+    "jest": "^24.9.0",
+    "lint-staged": "^10.0.3",
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.0.0"
   },
   "husky": {
     "hooks": {
@@ -78,8 +78,7 @@
   },
   "lint-staged": {
     "*.{js,md}": [
-      "npm run format",
-      "git add"
+      "npm run format"
     ]
   },
   "config": {
