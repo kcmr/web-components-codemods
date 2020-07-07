@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/kcmr/web-components-codemods/compare/1.1.1...1.1.2) (2020-07-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency globby to v11 ([0e8e0ed](https://github.com/kcmr/web-components-codemods/commit/0e8e0edd9ff92f82255e2b3d53a1e2ca07244038))
+
 ## [1.1.1](https://github.com/kcmr/web-components-codemods/compare/1.1.0...1.1.1) (2020-06-20)
 
 
