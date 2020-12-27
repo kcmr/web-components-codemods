@@ -39,7 +39,7 @@
   "dependencies": {
     "@kuscamara/cli-helper": "^1.0.5",
     "dargs": "^7.0.0",
-    "execa": "^4.0.0",
+    "execa": "^5.0.0",
     "globby": "^11.0.0",
     "inquirer-path": "^1.0.0-beta5",
     "jscodeshift": "^0.11.0"
