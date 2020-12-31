@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/kcmr/web-components-codemods/compare/1.1.3...1.1.4) (2020-12-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency execa to v5 ([3cf140d](https://github.com/kcmr/web-components-codemods/commit/3cf140d3debbdcd4431e77d7affc6f7cebcc8b34))
+
 ## [1.1.3](https://github.com/kcmr/web-components-codemods/compare/1.1.2...1.1.3) (2020-11-19)
 
 
