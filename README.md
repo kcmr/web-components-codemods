@@ -20,6 +20,7 @@ Breaking changes? Don't panic :)
   - [Replace attrs](#replace-attrs)
   - [Replace block scope by IIFE](#replace-block-scope-by-iife)
   - [Rename tag](#rename-tag)
+  - [LitElement to Lit imports](#litelement-to-lit-imports)
 - [Acknowledgments](#acknowledgments)
 
 ## Usage
@@ -56,6 +57,7 @@ Available transform commands (same as transform scripts):
 - [replace-attrs](#replace-attrs)
 - [block-scope-to-iife](#replace-block-scope-by-iife)
 - [rename-tag](#rename-tag)
+- [LitElement to Lit imports](#litelement-to-lit-imports)
 
 ### Using jscodeshift
 
@@ -212,6 +214,47 @@ const tpl = `
 `;
 -customElements.define('some-tag', SomeTag);
 +customElements.define('new-tag', SomeTag);
+```
+
+### LitElement to Lit imports
+
+Updates the imports from `lit-element` to `lit` according to the [upgrade guide](https://lit.dev/docs/releases/upgrade/) of Lit 2.0
+
+**Script:** `transforms/lit-element-to-lit-imports.js`
+
+**Options:**
+
+| Name      | Default  | Type     | Description                      |
+| --------- | -------- | -------- | -------------------------------- |
+| `--quote` | `single` | `String` | Type of quote (single or double) |
+
+Example input:
+
+```js
+import { css } from 'lit-element';
+import { LitElement, html, property as foo, customElement } from 'lit-element';
+import { repeat } from 'lit-html/directives/repeat.js';
+import { ifDefined } from 'lit-html/directives/if-defined';
+```
+
+Command with options:
+
+```bash
+jscodeshift input.js -t lit-element-to-lit-imports.js
+```
+
+Output:
+
+```diff
+-import { css } from 'lit-element';
++import { css } from 'lit';
+-import { LitElement, html, property as foo, customElement } from 'lit-element';
++import { LitElement, html } from 'lit';
++import { property as foo, customElement } from 'lit/decorators.js';
+-import { repeat } from 'lit-html/directives/repeat.js';
++import { repeat } from 'lit/directives/repeat.js';
+-import { ifDefined } from 'lit-html/directives/if-defined';
++import { ifDefined } from 'lit/directives/if-defined';
 ```
 
 ## Acknowledgments
