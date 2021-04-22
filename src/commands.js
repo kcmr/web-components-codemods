@@ -73,4 +73,11 @@ module.exports = {
     },
     action: runTransform,
   },
+  'lit-element-to-lit-imports': {
+    desc: 'Replaces lit-element imports to lit imports',
+    params: {
+      ...commonParams,
+    },
+    action: runTransform,
+  },
 };
