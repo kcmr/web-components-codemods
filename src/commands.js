@@ -73,4 +73,16 @@ module.exports = {
     },
     action: runTransform,
   },
+  'lit-element-to-lit-imports': {
+    desc: 'Replaces lit-element imports to lit imports',
+    params: {
+      ...commonParams,
+      quote: {
+        message: 'Type of quote (single or double)',
+        type: 'input',
+        default: 'single',
+      },
+    },
+    action: runTransform,
+  },
 };
