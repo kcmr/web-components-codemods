@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/kcmr/web-components-codemods/compare/1.1.4...1.2.0) (2021-04-23)
+
+
+### Features
+
+* **transforms:** add lit-element to lit imports codemod ([#58](https://github.com/kcmr/web-components-codemods/issues/58)) ([5152f7e](https://github.com/kcmr/web-components-codemods/commit/5152f7e687cd30a4de353104c3e10e553604b202))
+
 ## [1.1.4](https://github.com/kcmr/web-components-codemods/compare/1.1.3...1.1.4) (2020-12-31)
 
 
