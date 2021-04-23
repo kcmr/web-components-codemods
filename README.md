@@ -57,7 +57,7 @@ Available transform commands (same as transform scripts):
 - [replace-attrs](#replace-attrs)
 - [block-scope-to-iife](#replace-block-scope-by-iife)
 - [rename-tag](#rename-tag)
-- [LitElement to Lit imports](#litelement-to-lit-imports)
+- [lit-element-to-lit-imports](#litelement-to-lit-imports)
 
 ### Using jscodeshift
 
