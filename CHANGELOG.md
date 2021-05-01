@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/kcmr/web-components-codemods/compare/1.2.0...1.2.1) (2021-05-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jscodeshift to ^0.12.0 ([#59](https://github.com/kcmr/web-components-codemods/issues/59)) ([6029bcc](https://github.com/kcmr/web-components-codemods/commit/6029bcc723f3b7e80d5c6ece3f9196eeb2bc5e8c))
+
 # [1.2.0](https://github.com/kcmr/web-components-codemods/compare/1.1.4...1.2.0) (2021-04-23)
 
 
