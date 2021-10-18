@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/kcmr/web-components-codemods/compare/1.2.1...1.2.2) (2021-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dargs to v8 ([61514b4](https://github.com/kcmr/web-components-codemods/commit/61514b4975f8bb05b4a315faf6ab549192c22d3f))
+
 ## [1.2.1](https://github.com/kcmr/web-components-codemods/compare/1.2.0...1.2.1) (2021-05-01)
 
 
